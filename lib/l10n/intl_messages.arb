@@ -1,0 +1,15 @@
+{
+  "@@last_modified": "2019-03-24T22:25:14.954300",
+  "appName": "The Garlanded",
+  "@appName": {
+    "description": "appName",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "The Garlanded",
+  "@home": {
+    "description": "home",
+    "type": "text",
+    "placeholders": {}
+  }
+}

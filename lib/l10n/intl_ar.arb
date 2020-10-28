@@ -1,0 +1,15 @@
+{
+  "@@last_modified": "2019-01-12T14:47:24.564305",
+  "appName": "الْقَلَائِدَ",
+  "@appName": {
+    "description": "appName",
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "الْقَلَائِدَ",
+  "@home": {
+    "description": "home",
+    "type": "text",
+    "placeholders": {}
+  }
+}
