@@ -86,6 +86,10 @@ flutter:
     - family: hmeda
       fonts:
         - asset: assets/font/Abuhmeda Free Regular.ttf
+    - family: cairo
+      fonts:
+        - asset: assets/font/Cairo-Regular.ttf
+        - asset: assets/font/Cairo-SemiBold.ttf
 #     - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

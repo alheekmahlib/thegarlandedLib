@@ -23,33 +23,14 @@ class SettingsHelpers {
     await prefs.setString('fontSizeArabic', fontSize.toString());
   }
 
-  static const double minFontSizeArabic = 12;
+  static const double minFontSizeArabic = 20;
 
   double get getFontSizeArabic {
     String fontSizeString = prefs.getString('fontSizeArabic');
     return double.tryParse(fontSizeString ?? minFontSizeArabic.toString());
   }
 
-  Future setLocale(Locale locale) async {
-    var map = {
-      'languageCode': locale.languageCode,
-    };
-    var json = jsonEncode(map);
-    await prefs.setString('locale', json);
-  }
-
-  Locale getLocale() {
-    var json = prefs.getString('locale');
-    if (isBlank(json)) {
-      return Locale('ar');
-    }
-    var mapJson = jsonDecode(json);
-    var locale = Locale(mapJson["languageCode"]);
-    return locale;
-  }
-
   Future init() async {
     prefs = await SharedPreferences.getInstance();
   }
 }
-

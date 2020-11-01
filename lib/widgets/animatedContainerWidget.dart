@@ -15,8 +15,8 @@ class AnimatedContainerWidget extends StatefulWidget {
 class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
 
 
-  double conWidth = 50;
-  double conHeight = 50;
+  double conWidth = 40;
+  double conHeight = 40;
   double conRadius = 12;
   bool showCon = true;
 
@@ -33,7 +33,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
         width: conWidth,
         height: conHeight,
         decoration: BoxDecoration(
-          // color: Theme.of(context).primaryColorLight,
+          color: Theme.of(context).primaryColorLight,
           borderRadius: BorderRadius.circular(conRadius),
         ),
         child: IconButton(
@@ -47,7 +47,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
       ),
       secondChild: Container(
         width: MediaQuery.of(context).size.width /1/2 *1.3,
-        height: MediaQuery.of(context).size.height /1/2,
+        height: MediaQuery.of(context).size.height /1/2 * .5,
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColorLight,
           borderRadius: BorderRadius.circular(conRadius),
@@ -55,7 +55,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 8, bottom: 48, right: 8, left: 8),
+              padding: const EdgeInsets.only(top: 40, bottom: 8, right: 8, left: 8),
               child: Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).hoverColor,
@@ -69,7 +69,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
               ),
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.topCenter,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

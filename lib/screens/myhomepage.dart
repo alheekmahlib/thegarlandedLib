@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   final iconList = <IconData>[
     Icons.home,
-    Icons.favorite_border,
+    Icons.bookmark,
   ];
 
   final List<Widget> wid = <Widget>[
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).backgroundColor,
       floatingActionButton: ScaleTransition(
         scale: animation,
         child: FloatingActionButton(

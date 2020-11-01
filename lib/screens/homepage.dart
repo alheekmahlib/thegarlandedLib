@@ -36,7 +36,8 @@ class _HomePageState extends State<HomePage> {
       future: getBookNameUrl(),
     builder: (context, snapshot) {
       if (!snapshot.hasData) {
-        return Center(child: CircularProgressIndicator());
+        return Center(child: Image.asset('assets/images/Loading.gif',
+          scale: 3,));
       } else {
         return Stack(
           children: [
@@ -150,77 +151,87 @@ class _HomePageState extends State<HomePage> {
                                 crossAxisSpacing: 16,
                                 mainAxisSpacing: 16,
                                 childAspectRatio: 1.4 / 2),
-                            itemBuilder: (context, index) =>
-                                GestureDetector(
-                                  child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Theme
-                                              .of(context)
-                                              .bottomAppBarColor
-                                              .withOpacity(.5),
-                                          borderRadius:
-                                          BorderRadius.all(Radius.circular(8))),
-                                      child: Stack(
-                                        alignment: Alignment.center,
-                                        children: [
-                                          Opacity(
-                                            child: Image.asset(
-                                              '${snapshot.data[index]['bookD']}',
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Theme
+                                                .of(context)
+                                                .bottomAppBarColor
+                                                .withOpacity(.5),
+                                            borderRadius:
+                                            BorderRadius.all(
+                                                Radius.circular(8))),
+                                        child: Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            Opacity(
+                                              child: Image.asset(
+                                                '${snapshot
+                                                    .data[index]['bookD']}',
+                                              ),
+                                              opacity: 0.1,
                                             ),
-                                            opacity: 0.1,
-                                          ),
-                                          Container(
-                                            width: 130,
-                                            decoration: BoxDecoration(
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: Theme
-                                                        .of(context)
-                                                        .primaryColorLight,
-                                                    offset: Offset(10.0, 5.0),
-                                                    blurRadius: 9)
-                                              ],
+                                            Container(
+                                              width: 130,
+                                              decoration: BoxDecoration(
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      color: Theme
+                                                          .of(context)
+                                                          .primaryColorLight,
+                                                      offset: Offset(10.0, 5.0),
+                                                      blurRadius: 9)
+                                                ],
+                                              ),
+                                              child: Card(
+                                                  child: Image.asset(
+                                                      '${snapshot
+                                                          .data[index]['bookD']}')),
                                             ),
-                                            child: Card(
-                                                child: Image.asset(
-                                                    '${snapshot.data[index]['bookD']}')),
-                                          ),
-                                          Container(
-                                            width: 120,
-                                            child: Padding(
-                                              padding:
-                                              const EdgeInsets.only(top: 48.0),
-                                              child: Text(
-                                                '${snapshot.data[index]['title']}',
-                                                style: TextStyle(
-                                                    color: Theme
-                                                        .of(context)
-                                                        .backgroundColor,
-                                                    fontSize: 20,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontFamily: 'Tajawal'),
-                                                textAlign: TextAlign.center,
+                                            Container(
+                                              width: 120,
+                                              child: Padding(
+                                                padding:
+                                                const EdgeInsets.only(
+                                                    top: 48.0),
+                                                child: Text(
+                                                  '${snapshot
+                                                      .data[index]['title']}',
+                                                  style: TextStyle(
+                                                      color: Theme
+                                                          .of(context)
+                                                          .backgroundColor,
+                                                      fontSize: 20,
+                                                      fontWeight: FontWeight
+                                                          .w600,
+                                                      fontFamily: 'Tajawal'),
+                                                  textAlign: TextAlign.center,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      )),
-                                  onTap: () {
-                                    itemIndex = snapshot.data[index]['title'];
-                                    indexI = index;
-                                    Navigator.pushNamed(
-                                      context,
-                                      DetailsScreen.routeName,
-                                      arguments: ScreenArguments(
-                                        '${snapshot.data[index]['title']}',
-                                        '${snapshot.data[index]['bookQuoted']}',
-                                        '${snapshot.data[index]['bookQuoted']}',
-                                        '${snapshot.data[index]['aboutBook']}',
-                                        '${snapshot.data[index]['bookD']}',
-                                      ),
-                                    );
-                                  },
-                                )),
+                                          ],
+                                        )),
+                                    onTap: () {
+                                      itemIndex = snapshot.data[index]['title'];
+                                      indexI = index;
+                                      Navigator.pushNamed(
+                                        context,
+                                        DetailsScreen.routeName,
+                                        arguments: ScreenArguments(
+                                          '${snapshot.data[index]['title']}',
+                                          '${snapshot
+                                              .data[index]['bookQuoted']}',
+                                          '${snapshot
+                                              .data[index]['bookQuoted']}',
+                                          '${snapshot
+                                              .data[index]['aboutBook']}',
+                                          '${snapshot.data[index]['bookD']}',
+                                        ),
+                                      );
+                                    },
+                                  );
+                            }),
                       ),
                     ],
                   )),
@@ -236,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                     Icons.settings_outlined,
                     color: Theme
                         .of(context)
-                        .bottomAppBarColor,
+                        .backgroundColor,
                   ),
                   Icon(
                     Icons.cancel,
